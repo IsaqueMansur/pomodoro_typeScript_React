@@ -1,5 +1,7 @@
 module.exports = {
-  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   settings: {
@@ -8,6 +10,10 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
     },
   },
   rules: {
@@ -20,5 +26,7 @@ module.exports = {
     'no-useless-constructor': 0,
     'class-methods-use-this': 0,
     'max-classes-per-file': 0,
+    'react/destructuring-assignment': 0,
+    'react/require-default-props': 0,
   },
 };
