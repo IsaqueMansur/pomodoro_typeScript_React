@@ -4,6 +4,7 @@ interface Props {
   text: string;
   onClick?: () => void;
   className?: string;
+  ref?: string;
 }
 
 export default function Button(props: Props): JSX.Element {
@@ -12,6 +13,7 @@ export default function Button(props: Props): JSX.Element {
       type="button"
       onClick={props?.onClick}
       className={props?.className}
+      ref={props?.ref}
     >
       {props.text}
 
